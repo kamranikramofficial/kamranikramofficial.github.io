@@ -8,4 +8,16 @@ export default defineConfig({
     middlewareMode: false,
     hmr: true,
   },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'three'],
+        },
+      },
+    },
+  },
 })
