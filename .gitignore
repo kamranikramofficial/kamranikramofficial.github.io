@@ -1,0 +1,5 @@
+.env
+.qodo
+node_modules
+.vercel
+.env*.local
