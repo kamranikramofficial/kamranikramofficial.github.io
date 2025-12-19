@@ -1,14 +1,6 @@
 import mongoose from "mongoose";
 import nodemailer from "nodemailer";
 
-// For local development with `vercel dev` or similar
-if (process.env.NODE_ENV !== "production") {
-  // Dynamically import to avoid bundler complaints if dotenv isn't installed in production
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const dotenv = await import("dotenv");
-  dotenv.config();
-}
-
 const {
   MONGODB_URI,
   SMTP_HOST,
