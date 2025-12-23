@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamran Ikram - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fff;
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #915EFF;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #915EFF;
+            margin-bottom: 10px;
+        }
+        
+        .header .title {
+            font-size: 16px;
+            color: #915EFF;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+        
+        .contact-info a {
+            color: #915EFF;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            color: #1a1a2e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #915EFF;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        /* Summary */
+        .summary {
+            text-align: justify;
+            font-size: 13px;
+            color: #444;
+        }
+        
+        /* Experience & Education Items */
+        .item {
+            margin-bottom: 15px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+        
+        .item-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        
+        .item-company {
+            font-size: 13px;
+            color: #915EFF;
+            font-weight: 600;
+        }
+        
+        .item-date {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            white-space: nowrap;
+        }
+        
+        .item-points {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 13px;
+            color: #444;
+        }
+        
+        .item-points li {
+            margin-bottom: 3px;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        
+        .skill-category-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+        
+        .skill-list {
+            font-size: 13px;
+            color: #444;
+        }
+        
+        /* Projects */
+        .project {
+            margin-bottom: 12px;
+        }
+        
+        .project-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        
+        .project-tech {
+            font-size: 12px;
+            color: #915EFF;
+            font-weight: 600;
+        }
+        
+        .project-desc {
+            font-size: 12px;
+            color: #444;
+            margin-top: 3px;
+        }
+        
+        .project-links {
+            font-size: 11px;
+            margin-top: 3px;
+        }
+        
+        .project-links a {
+            color: #915EFF;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        /* Certifications & Achievements */
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .cert-name {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .cert-org {
+            color: #915EFF;
+        }
+        
+        .cert-date {
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 20px;
+                font-size: 12px;
+            }
+            
+            .section {
+                margin-bottom: 15px;
+            }
+            
+            .header {
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .download-btn {
+                display: none !important;
+            }
+        }
+        
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #915EFF, #6B3FA0);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(145, 94, 255, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(145, 94, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="profile.png" alt="Kamran Ikram" class="profile-img">
+        <h1>Kamran Ikram</h1>
+        <div class="title">Full-Stack Developer | MERN Stack Specialist</div>
+        <div class="contact-info">
+            <span>📍 Karachi, Pakistan</span>
+            <span>� <a href="mailto:kamranikramofficial@gmail.com">kamranikramofficial@gmail.com</a></span>
+            <span>�🔗 <a href="https://linkedin.com/in/kamranikramofficial" target="_blank">linkedin.com/in/kamranikramofficial</a></span>
+            <span>💻 <a href="https://github.com/kamranikramofficial" target="_blank">github.com/kamranikramofficial</a></span>
+        </div>
+    </div>
+    
+    <!-- Professional Summary -->
+    <div class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+            Aspiring Full-Stack Developer with hands-on experience in HTML, CSS, and JavaScript, and a strong command of modern frameworks and libraries. On the frontend, I specialize in React.js, Tailwind CSS, Material UI, Bootstrap, and Shadcn UI to build clean, responsive, and user-friendly interfaces. On the backend, I work with Node.js, Express.js, MongoDB, and Mongoose to develop efficient, scalable, and secure server-side applications. A quick learner passionate about writing clean code and creating solutions that solve real-world problems.
+        </p>
+    </div>
+    
+    <!-- Skills Section -->
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-title">Frontend Development</div>
+                <div class="skill-list">React.js, Tailwind CSS, Material UI, Bootstrap, Shadcn UI, HTML5, CSS3</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Backend Development</div>
+                <div class="skill-list">Node.js, Express.js, MongoDB, Mongoose</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Programming Languages</div>
+                <div class="skill-list">JavaScript (ES6+), Java</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Tools & Platforms</div>
+                <div class="skill-list">Git, GitHub, Firebase, Supabase, Vercel</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Experience Section -->
+    <div class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">MERN Stack Developer (Trainee)</div>
+                    <div class="item-company">Saylani Mass IT Training Program</div>
+                </div>
+                <div class="item-date">Oct 2024 - Feb 2026</div>
+            </div>
+            <ul class="item-points">
+                <li>Learning full-stack technologies: HTML, CSS, JavaScript, React.js, Node.js, Express.js, MongoDB, and Mongoose</li>
+                <li>Building and deploying responsive web apps using modern UI/UX and API integration</li>
+                <li>Developing backend logic with Node and Express, and managing databases with MongoDB</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Education Section -->
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Intermediate in Computer Science (ICS)</div>
+                    <div class="item-company">Govt. Boys College Sachal Goth, Ghazi Goth, Karachi</div>
+                </div>
+                <div class="item-date">Aug 2025 - Aug 2027</div>
+            </div>
+            <ul class="item-points">
+                <li>Currently pursuing Intermediate in Computer Science (ICS)</li>
+                <li>Focused on core IT and programming fundamentals</li>
+            </ul>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Modern Web and App Development (MERN Stack)</div>
+                    <div class="item-company">Saylani Mass IT Training Program</div>
+                </div>
+                <div class="item-date">Oct 2024 - Feb 2026</div>
+            </div>
+            <ul class="item-points">
+                <li>Learning modern full-stack web development including React.js, Node.js, Express.js, MongoDB</li>
+                <li>Developing real-world projects using React for frontend and Node/Express for backend</li>
+                <li>Grade: A</li>
+            </ul>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Secondary School Certificate (SSC) - Computer Science</div>
+                    <div class="item-company">Al-Beruni Model Secondary School</div>
+                </div>
+                <div class="item-date">Aug 2023 - Apr 2025</div>
+            </div>
+            <ul class="item-points">
+                <li>Completed secondary education with focus on Physics, Chemistry, Mathematics, and Computer Science</li>
+                <li>Participated in Science Exhibitions and tech-related school events</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Projects Section -->
+    <div class="section">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="project">
+            <div class="project-name">Dynamic Recipe Website</div>
+            <div class="project-tech">HTML, CSS, JavaScript, Bootstrap</div>
+            <div class="project-desc">A fully responsive recipe website with user authentication, interactive recipe filtering, and modern UI for seamless browsing experience.</div>
+            <div class="project-links">
+                <a href="https://github.com/kamranikramofficial/Food" target="_blank">GitHub</a>
+                <a href="https://kamranikramofficial.github.io/Food/" target="_blank">Live Demo</a>
+            </div>
+        </div>
+        
+        <div class="project">
+            <div class="project-name">CSS-Toolkit</div>
+            <div class="project-tech">HTML, CSS, JavaScript</div>
+            <div class="project-desc">A web-based tool for generating custom CSS styles and HTML snippets with live previews and exportable code.</div>
+            <div class="project-links">
+                <a href="https://github.com/kamranikramofficial/css-tools" target="_blank">GitHub</a>
+                <a href="https://css-tools-bay.vercel.app/" target="_blank">Live Demo</a>
+            </div>
+        </div>
+        
+        <div class="project">
+            <div class="project-name">Al-Beruni Science Exhibition Website</div>
+            <div class="project-tech">HTML, CSS, JavaScript, Bootstrap</div>
+            <div class="project-desc">A visually engaging website built to showcase a science exhibition project with modern UI, smooth navigation, and responsive layout.</div>
+            <div class="project-links">
+                <a href="https://github.com/kamranikramofficial/Al-Beruni" target="_blank">GitHub</a>
+                <a href="https://al-beruni.vercel.app/" target="_blank">Live Demo</a>
+            </div>
+        </div>
+        
+        <div class="project">
+            <div class="project-name">Student Information System</div>
+            <div class="project-tech">HTML, CSS, JavaScript</div>
+            <div class="project-desc">A beginner-level project to practice front-end concepts through hands-on implementation.</div>
+            <div class="project-links">
+                <a href="https://github.com/kamranikramofficial/student-info" target="_blank">GitHub</a>
+                <a href="https://student-info-lake.vercel.app/" target="_blank">Live Demo</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Certifications & Achievements -->
+    <div class="section">
+        <h2 class="section-title">Certifications & Achievements</h2>
+        
+        <div class="cert-item">
+            <div>
+                <span class="cert-name">JavaScript Algorithms and Data Structures</span>
+                <span class="cert-org"> - freeCodeCamp</span>
+            </div>
+            <span class="cert-date">Mar 2025</span>
+        </div>
+        
+        <div class="cert-item">
+            <div>
+                <span class="cert-name">Responsive Web Design</span>
+                <span class="cert-org"> - freeCodeCamp</span>
+            </div>
+            <span class="cert-date">Mar 2025</span>
+        </div>
+        
+        <div class="cert-item">
+            <div>
+                <span class="cert-name">Participant - Saylani AI Hackathon 2025</span>
+                <span class="cert-org"> - 12-hour overnight coding challenge</span>
+            </div>
+            <span class="cert-date">May 2025</span>
+        </div>
+        
+        <div class="cert-item">
+            <div>
+                <span class="cert-name">Volunteer - Saylani Mass IT Training Program</span>
+                <span class="cert-org"> - Education Department</span>
+            </div>
+            <span class="cert-date">Sep 2025</span>
+        </div>
+        
+        <div class="cert-item">
+            <div>
+                <span class="cert-name">6,000+ Followers on LinkedIn</span>
+                <span class="cert-org"> - Professional Network Achievement</span>
+            </div>
+            <span class="cert-date">Oct 2025</span>
+        </div>
+    </div>
+    
+    <!-- Download PDF Button -->
+    <button class="download-btn" onclick="downloadPDF()">
+        📥 Download PDF
+    </button>
+    
+    <script>
+        function downloadPDF() {
+            // Hide the download button before printing
+            document.querySelector('.download-btn').style.display = 'none';
+            
+            // Trigger print dialog (user can save as PDF)
+            window.print();
+            
+            // Show the button again after print dialog closes
+            setTimeout(() => {
+                document.querySelector('.download-btn').style.display = 'block';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
